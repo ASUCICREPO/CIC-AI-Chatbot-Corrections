@@ -18,12 +18,33 @@ This CDK application deploys the following AWS resources:
 
 Before deploying this solution, you need:
 
-1. [AWS CLI](https://aws.amazon.com/cli/) installed and configured
-2. [Node.js](https://nodejs.org/) (v14.x or later)
-3. [AWS CDK](https://aws.amazon.com/cdk/) installed (`npm install -g aws-cdk`)
-4. An AWS Identity Center instance ARN
-5. A list of seed URLs to crawl
-6. AWS credentials configured (`aws configure`) with appropriate permissions to create resources
+1. **AWS Account**: An active AWS account with appropriate permissions
+2. **AWS CLI**: [AWS Command Line Interface](https://aws.amazon.com/cli/) installed
+3. **AWS Credentials**: Configured with `aws configure` (see details below)
+4. **Node.js**: [Node.js](https://nodejs.org/) v14.x or later
+5. **AWS CDK**: Installed globally with `npm install -g aws-cdk`
+6. **AWS Identity Center**: Set up and configured with an instance ARN
+7. **Seed URLs**: A list of websites you want to crawl and index
+
+### Configuring AWS CLI
+
+Before deploying, you must configure your AWS CLI with appropriate credentials:
+
+```bash
+aws configure
+```
+
+You'll be prompted to enter:
+- **AWS Access Key ID**: Your IAM user access key
+- **AWS Secret Access Key**: Your IAM user secret key
+- **Default region name**: The AWS region to deploy to (e.g., us-east-1)
+- **Default output format**: json (recommended)
+
+Ensure your IAM user or role has permissions to create the following resources:
+- Amazon Q Business resources
+- IAM roles and policies
+- KMS keys
+- CloudWatch logs
 
 ### Getting Your AWS Identity Center Instance ARN
 
@@ -35,6 +56,25 @@ To find your AWS Identity Center instance ARN:
 4. Under "Identity source", you'll find your Identity Center ARN in the format:
    `arn:aws:sso:::instance/ssoins-xxxxxxxxxx`
 5. Copy this ARN to use in your configuration
+
+The ARN format should be similar to: `arn:aws:sso:::instance/ssoins-1234567890abcdef`
+
+### Preparing Seed URLs
+
+Identify websites you want to crawl and index. Consider the following when selecting URLs:
+
+- **Content Relevance**: Choose websites with content relevant to your users' needs
+- **Public Access**: Ensure the websites are publicly accessible
+- **Content Volume**: Consider the amount of content to be indexed
+- **Update Frequency**: Consider how often the content changes
+- **Legal Considerations**: Ensure you have permission to crawl and index the content
+
+Example seed URLs:
+```
+https://docs.aws.amazon.com/qbusiness/
+https://aws.amazon.com/qbusiness/faqs/
+https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/amazon-q/
+```
 
 ## Installation
 
@@ -51,25 +91,49 @@ npm install
 
 ## Deployment
 
-### Deploy the Stack
+### Using the Deployment Script
 
-To deploy the application to your AWS account:
-
-```bash
-# Configure your AWS credentials if not already done
-aws configure
-```
-Bootstrap Your AWS Environment:
-
-Before deploying the CDK stack for the first time in an AWS environment, you need to bootstrap the environment:
+The easiest way to deploy this application is using the included deployment script:
 
 ```bash
-# Bootstrap your AWS environment 
-cdk bootstrap 
+# Make the script executable
+chmod +x deploy.sh
 
-# Deploy the stack
-cdk deploy
+# Run the deployment script
+./deploy.sh
 ```
+
+This interactive script will:
+1. Install all required dependencies (npm install)
+2. Prompt you for your AWS Identity Center Instance ARN
+3. Allow you to enter multiple seed URLs for the web crawler
+4. Update the configuration files automatically
+5. Offer to bootstrap your AWS environment if needed
+6. Deploy the stack to your AWS account
+
+### Manual Deployment
+
+If you prefer to deploy manually, follow these steps:
+
+1. Configure your AWS credentials if not already done:
+   ```bash
+   aws configure
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Bootstrap your AWS environment (only needed once per account/region):
+   ```bash
+   cdk bootstrap
+   ```
+
+4. Deploy the stack:
+   ```bash
+   cdk deploy
+   ```
 
 This will:
 1. Compile the TypeScript code
@@ -80,13 +144,13 @@ You can also run these steps individually:
 
 ```bash
 # Compile TypeScript to JavaScript
-cdk build
+npm run build
 
 # Synthesize CloudFormation template
-cdk synth
+npm run synth
 
 # Deploy the stack
-cdk deploy
+npm run deploy
 ```
 
 ## Post-Deployment Configuration (AWS Console)

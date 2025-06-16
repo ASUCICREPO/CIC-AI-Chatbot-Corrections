@@ -23,6 +23,27 @@ if ! command -v npx cdk &> /dev/null; then
     exit 1
 fi
 
+# Check if Node.js is installed
+if ! command -v node &> /dev/null; then
+    echo -e "${RED}Error: Node.js is not installed. Please install it first.${NC}"
+    exit 1
+fi
+
+# Check if npm is installed
+if ! command -v npm &> /dev/null; then
+    echo -e "${RED}Error: npm is not installed. Please install it first.${NC}"
+    exit 1
+fi
+
+# Install dependencies
+echo -e "${YELLOW}Installing dependencies...${NC}"
+npm install
+if [ $? -ne 0 ]; then
+    echo -e "${RED}Failed to install dependencies. Please check the error messages above.${NC}"
+    exit 1
+fi
+echo -e "${GREEN}Dependencies installed successfully!${NC}"
+
 # Prompt for AWS Identity Center Instance ARN
 echo -e "${YELLOW}Please enter your AWS Identity Center Instance ARN${NC}"
 echo -e "${BLUE}(Format: arn:aws:sso:::instance/ssoins-xxxxxxxxxx)${NC}"
