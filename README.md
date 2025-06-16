@@ -51,15 +51,6 @@ npm install
 
 ## Deployment
 
-### Bootstrap Your AWS Environment
-
-Before deploying the CDK stack for the first time in an AWS environment, you need to bootstrap the environment:
-
-```bash
-# Bootstrap your AWS environment 
-cdk bootstrap 
-```
-
 ### Deploy the Stack
 
 To deploy the application to your AWS account:
@@ -67,6 +58,14 @@ To deploy the application to your AWS account:
 ```bash
 # Configure your AWS credentials if not already done
 aws configure
+```
+Bootstrap Your AWS Environment:
+
+Before deploying the CDK stack for the first time in an AWS environment, you need to bootstrap the environment:
+
+```bash
+# Bootstrap your AWS environment 
+cdk bootstrap 
 
 # Deploy the stack
 cdk deploy
