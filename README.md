@@ -25,6 +25,17 @@ Before deploying this solution, you need:
 5. A list of seed URLs to crawl
 6. AWS credentials configured (`aws configure`) with appropriate permissions to create resources
 
+### Getting Your AWS Identity Center Instance ARN
+
+To find your AWS Identity Center instance ARN:
+
+1. Sign in to the AWS Management Console
+2. Navigate to the AWS IAM Identity Center service
+3. In the left navigation pane, choose "Settings"
+4. Under "Identity source", you'll find your Identity Center ARN in the format:
+   `arn:aws:sso:::instance/ssoins-xxxxxxxxxx`
+5. Copy this ARN to use in your configuration
+
 ## Installation
 
 1. Clone this repository
@@ -40,6 +51,17 @@ npm install
 
 ## Deployment
 
+### Bootstrap Your AWS Environment
+
+Before deploying the CDK stack for the first time in an AWS environment, you need to bootstrap the environment:
+
+```bash
+# Bootstrap your AWS environment 
+cdk bootstrap 
+```
+
+### Deploy the Stack
+
 To deploy the application to your AWS account:
 
 ```bash
@@ -47,7 +69,7 @@ To deploy the application to your AWS account:
 aws configure
 
 # Deploy the stack
-npm run deploy
+cdk deploy
 ```
 
 This will:
@@ -59,10 +81,10 @@ You can also run these steps individually:
 
 ```bash
 # Compile TypeScript to JavaScript
-npm run build
+cdk build
 
 # Synthesize CloudFormation template
-npm run synth
+cdk synth
 
 # Deploy the stack
 cdk deploy
@@ -150,7 +172,7 @@ The stack creates several IAM roles with least-privilege permissions:
 To remove all resources created by this stack:
 
 ```bash
-npm run destroy
+cdk destroy
 ```
 
 ## Security Considerations
@@ -168,6 +190,31 @@ Common issues:
 2. **Web crawler isn't indexing content**: Check the seed URLs and inclusion/exclusion patterns
 3. **Q Business application isn't available**: Verify that your AWS Identity Center instance is correctly configured
 
+## Testing the Application
+
+After completing the deployment and post-deployment configuration steps, you can test your Amazon Q Business application:
+
+### 1. Access the Web Experience
+
+1. Navigate to the Amazon Q Business console
+2. Select your application (`CDK_QBusiness_WebCrawler`)
+3. Go to the "Web experiences" tab
+4. Click on the web experience URL to open the Q Business web interface
+5. Sign in using your AWS Identity Center credentials
+
+### 2. Test Search Functionality
+
+1. Once signed in, use the search bar at the top of the interface
+2. Enter keywords related to the content from your crawled websites
+3. Review the search results to verify that content was properly indexed
+4. Click on search results to view the full content and source information
+
+### 3. Test Conversational AI Features
+
+1. Start a new conversation by clicking on the chat icon
+2. Ask questions related to the content from your crawled websites
+3. Verify that the AI provides relevant answers with citations to the source content
+4. Try follow-up questions to test the contextual understanding
 
 ## License
 
