@@ -85,10 +85,6 @@ https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/a
 npm install
 ```
 
-3. Update the configuration in `bin/amazon-q-app.ts`:
-   - Replace the `identityCenterInstanceArn` with your actual AWS Identity Center instance ARN
-   - Update the `seedUrls` array with the websites you want to crawl
-
 ## Deployment
 
 ### Using the Deployment Script
@@ -115,22 +111,16 @@ This interactive script will:
 
 If you prefer to deploy manually, follow these steps:
 
-1. Configure your AWS credentials if not already done:
-   ```bash
-   aws configure
-   ```
+1. Update the configuration in `bin/amazon-q-app.ts`:
+   - Replace the `identityCenterInstanceArn` with your actual AWS Identity Center instance ARN
+   - Update the `seedUrls` array with the websites you want to crawl
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Bootstrap your AWS environment (only needed once per account/region):
+2. Bootstrap your AWS environment (only needed once per account/region):
    ```bash
    cdk bootstrap
    ```
 
-4. Deploy the stack:
+3. Deploy the stack:
    ```bash
    cdk deploy
    ```
@@ -139,19 +129,6 @@ This will:
 1. Compile the TypeScript code
 2. Synthesize a CloudFormation template
 3. Deploy the stack to your default AWS account and region
-
-You can also run these steps individually:
-
-```bash
-# Compile TypeScript to JavaScript
-npm run build
-
-# Synthesize CloudFormation template
-npm run synth
-
-# Deploy the stack
-npm run deploy
-```
 
 ## Post-Deployment Configuration (AWS Console)
 
