@@ -100,6 +100,12 @@ https://example-corrections-agency.gov/training/
 
    **Note**: You may see some npm warnings including "1 low severity vulnerability" during installation. These are common npm dependency warnings and do not pose a security risk to your AWS deployment or data. The warnings are related to development dependencies and do not affect the runtime security of your application.
 
+   **CDK Version Compatibility**: If you encounter CDK version compatibility errors during deployment or cleanup, you may need to update your CDK CLI:
+   ```bash
+   npm uninstall -g aws-cdk
+   npm install -g aws-cdk@latest
+   ```
+
 ## Deployment
 
 ### Using the Deployment Script (Recommended)
@@ -125,29 +131,6 @@ This interactive script will:
 **Expected Deployment Time**: The deployment typically takes 8-12 minutes to complete.
 
 **Security Note**: During deployment, CDK may display a message about security-related changes. This is a standard CDK notification and is expected for this deployment. The changes are necessary for creating the required IAM roles and policies for Amazon Q Business to function properly.
-
-### Manual Deployment
-
-If you prefer to deploy manually, follow these steps:
-
-1. Update the configuration in `bin/amazon-q-app.ts`:
-   - Replace the `identityCenterInstanceArn` with your actual AWS Identity Center instance ARN
-   - Update the `seedUrls` array with the websites you want to crawl
-
-2. Bootstrap your AWS environment (only needed once per account/region):
-   ```bash
-   cdk bootstrap
-   ```
-
-3. Deploy the stack:
-   ```bash
-   cdk deploy
-   ```
-
-This will:
-1. Compile the TypeScript code
-2. Synthesize a CloudFormation template
-3. Deploy the stack to your default AWS account and region
 
 ## Post-Deployment Configuration (AWS Console)
 
@@ -189,7 +172,7 @@ This is a security best practice that adds an additional layer of protection to 
 
 **Note**: Advanced indexing is optional but recommended as it enables the crawler to extract and index content from images, PDFs, and other multimedia files. Be aware that enabling this feature may incur additional costs for processing multimedia content.
 
-### 4. Manually Sync the Web Crawler
+### 4. Sync the Web Crawler
 
 The web crawler is configured for on-demand synchronization. To start the initial crawl:
 
@@ -248,14 +231,7 @@ To remove all resources created by this stack:
 cdk destroy
 ```
 
-**Note**: If you encounter a CDK version compatibility error during cleanup, you may need to update your CDK CLI:
-
-```bash
-npm uninstall -g aws-cdk
-npm install -g aws-cdk@latest
-```
-
-Then retry the destroy command.
+If you encounter a CDK version compatibility error, the CDK CLI should already be updated from the installation steps above. If issues persist, verify your CDK version matches your project dependencies.
 
 ## Security Considerations
 

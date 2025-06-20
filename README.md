@@ -23,22 +23,6 @@ This solution deploys the following AWS resources:
 - **IAM Roles and Policies**: Necessary permissions for the Q Business services to operate
 - **KMS Key**: For encryption of sensitive data
 
-## Quick Start
-
-Choose your preferred deployment method:
-
-### Infrastructure as Code (Recommended)
-For automated deployment using AWS CDK:
-```bash
-git clone https://github.com/ASUCICREPO/AWS-AI-Chatbot-Corrections
-cd AWS-AI-Chatbot-Corrections
-chmod +x deploy.sh
-./deploy.sh
-```
-
-### Manual Deployment
-For step-by-step setup through AWS Console, follow the [Manual Deployment Guide](docs/manual-deployment.md).
-
 ## What You'll Need
 
 - AWS Account with appropriate permissions
