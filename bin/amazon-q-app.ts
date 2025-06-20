@@ -14,6 +14,7 @@ new AmazonQBusinessStack(app, 'AmazonQBusinessStack', {
   description: 'Amazon Q Business stack with web crawler data source',
   identityCenterInstanceArn: 'arn:aws:sso:::instance/ssoins-example', // <-- Replace with your actual ARN
   seedUrls: [
-    'https://www.example.com',
+    'https://example-corrections-agency.gov/policies/',
+    'https://example-corrections-agency.gov/reports/',
   ], // <-- Replace with your actual URLs to crawl
 });

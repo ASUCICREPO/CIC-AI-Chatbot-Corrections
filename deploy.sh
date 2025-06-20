@@ -161,7 +161,7 @@ if [[ $deploy_choice == "y" || $deploy_choice == "Y" ]]; then
     echo -e "${GREEN}Next Steps:${NC}"
     echo -e "${BLUE}===========================================================${NC}"
     echo -e "1. ${YELLOW}Navigate to the Amazon Q Business console${NC}"
-    echo -e "2. ${YELLOW}Select your application (CDK_QBusiness_WebCrawler)${NC}"
+    echo -e "2. ${YELLOW}Select your application (AWS_AI_Chatbot_Corrections)${NC}"
     echo -e "3. ${YELLOW}Add users and assign subscription types (Pro/Lite)${NC}"
     echo -e "4. ${YELLOW}Enable Advanced Indexing for the web crawler data source${NC}"
     echo -e "5. ${YELLOW}Manually sync the web crawler to start indexing content${NC}"
