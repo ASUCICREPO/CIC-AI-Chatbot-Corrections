@@ -79,9 +79,7 @@ Identify websites you want to crawl and index. Consider the following when selec
 
 Example seed URLs:
 ```
-https://example-corrections-agency.gov/policies/
-https://example-corrections-agency.gov/reports/
-https://example-corrections-agency.gov/training/
+https://example.com
 ```
 
 **Important Note**: If you later change the Source URLs after deployment, you must also update the `Crawl URL Patterns` and the `URL Pattern to Index` under `WebCrawlerDataSource -> Additional Configuration` in the AWS Console.
