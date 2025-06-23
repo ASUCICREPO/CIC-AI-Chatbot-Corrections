@@ -66,9 +66,8 @@ This is a security best practice that adds an additional layer of protection to 
 
 **Example seed URLs:**
 ```
-https://example-corrections-agency.gov/policies/
-https://example-corrections-agency.gov/reports/
-https://example-corrections-agency.gov/training/
+https://example.com
+https://example.org
 ```
 
 ### Step 7: Configure IAM Role
