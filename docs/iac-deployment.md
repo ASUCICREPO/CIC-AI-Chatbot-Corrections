@@ -78,7 +78,7 @@ Identify websites you want to crawl and index. Consider the following when selec
 - **Legal Considerations**: Ensure you have permission to crawl and index the content
 
 Example seed URL:
-```bash
+```
 https://example.com
 https://example.org
 ```
