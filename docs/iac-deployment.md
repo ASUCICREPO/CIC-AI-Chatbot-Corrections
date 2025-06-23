@@ -77,10 +77,8 @@ Identify websites you want to crawl and index. Consider the following when selec
 - **Update Frequency**: Consider how often the content changes
 - **Legal Considerations**: Ensure you have permission to crawl and index the content
 
-Example seed URLs:
-```
+Example seed URL:
 https://example.com
-```
 
 **Important Note**: If you later change the Source URLs after deployment, you must also update the `Crawl URL Patterns` and the `URL Pattern to Index` under `WebCrawlerDataSource -> Additional Configuration` in the AWS Console.
 
