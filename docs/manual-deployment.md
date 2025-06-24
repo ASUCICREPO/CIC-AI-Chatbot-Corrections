@@ -131,12 +131,13 @@ https://example.org
 1. Navigate back to your Amazon Q Business application
 ![image](https://github.com/user-attachments/assets/09fcfe92-2865-4bdd-b15e-fe2427ca599a)
 2. In the "User access" pane, click "Manage user access"
-4. Click "Add users" or "Add groups"
-5. Search for and select the users/groups you want to add
-6. Assign subscription types to each user:
-   - **Pro**: Full access to all features, including document upload and custom plugins
-   - **Lite**: Basic access with limited features
-7. Click "Add" to confirm
+3. Click "Users", click "Add groups and users"
+4. Search for and select the users you want to add, and click "Assign"
+5. Assign subscription types to each user:
+      Pro: Full access to all features, including document upload and custom plugins
+      Lite: Basic access with limited features
+6. Click "Confirm" to confirm
+
 
 **Note**: Newly created users will receive a welcome email with instructions to access the application.
 
