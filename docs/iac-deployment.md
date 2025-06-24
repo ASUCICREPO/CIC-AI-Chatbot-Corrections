@@ -140,12 +140,12 @@ After deploying the stack, you need to perform these additional steps in the AWS
 1. Navigate to the Amazon Q Business console
 2. Select your application (`AWS_AI_Chatbot_Corrections`)
 3. In the "User access" pane, click "Manage user access"
-4. Click "Add users" or "Add groups"
-5. Search for and select the users/groups you want to add
+4. Click "Users", click "Add groups and users"
+5. Search for and select the users you want to add, and click "Assign"
 6. Assign subscription types to each user:
-   - **Pro**: Full access to all features including document upload and custom plugins
+   - **Pro**: Full access to all features, including document upload and custom plugins
    - **Lite**: Basic access with limited features
-7. Click "Add" to confirm
+7. Click "Confirm" to confirm
 
 **Note**: Newly created users will receive a welcome email with instructions to access the application.
 
@@ -157,17 +157,17 @@ For enhanced security, we strongly recommend enabling Multi-Factor Authenticatio
 2. Follow the [official AWS documentation](https://docs.aws.amazon.com/singlesignon/latest/userguide/enable-mfa.html) to enable MFA
 3. Configure MFA requirements for your users
 
-This is a security best practice that adds an additional layer of protection to your application.
+This is a security best practice that adds a layer of protection to your application.
 
 ### 3. Configure Advanced Indexing for Web Crawler
 
 1. Navigate to the Amazon Q Business console
 2. Select your application (`AWS_AI_Chatbot_Corrections`)
-3. Go to the "Data sources" tab
-4. Select the "WebCrawlerDataSource" data source
+3. Go to the "Data sources" tab in the left pane
+4. Select the "WebCrawlerDataSource" data source from the "Data Sources" pane
 5. Click "Actions" -> "Edit"
-6. Under "Multi-media content configuration", enable "Advanced indexing"
-7. Save your changes
+6. In the "Sync scope" pane, under "Multi-media content configuration", enable "Advanced indexing"
+7. Save your changes by clicking on "Update"
 
 **Note**: Advanced indexing is optional but recommended as it enables the crawler to extract and index content from images, PDFs, and other multimedia files. Be aware that enabling this feature may incur additional costs for processing multimedia content.
 
