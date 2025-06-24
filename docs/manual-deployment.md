@@ -40,8 +40,10 @@ This is a security best practice that adds an additional layer of protection to 
 ### Step 2: Navigate to Amazon Q Business
 
 1. Click on the search bar at the top of your AWS console
+![image](https://github.com/user-attachments/assets/d9331c53-ea49-4b2a-a9d2-cb48a9902265)
 2. Type "Amazon Q Business"
 3. Click "Amazon Q Business" from the search results
+![image](https://github.com/user-attachments/assets/47f9f7ca-e464-4332-a770-53ccd9d402c7)
 
 ### Step 3: Create Application
 
