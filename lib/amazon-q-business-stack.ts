@@ -70,7 +70,7 @@ export class AmazonQBusinessStack extends cdk.Stack {
     });
 
     const application = new q.CfnApplication(this, 'Application', {
-      displayName: 'AWS_AI_Chatbot_Corrections',
+      displayName: 'CIC_AI_Chatbot_Corrections',
       identityCenterInstanceArn: props.identityCenterInstanceArn,
       roleArn: applicationRole.roleArn,
     });

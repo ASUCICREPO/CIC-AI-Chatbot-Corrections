@@ -138,7 +138,7 @@ After deploying the stack, you need to perform these additional steps in the AWS
 ### 1. Add Users to the Q Business Application
 
 1. Navigate to the Amazon Q Business console
-2. Select your application (`AWS_AI_Chatbot_Corrections`)
+2. Select your application (`CIC_AI_Chatbot_Corrections`)
 3. In the "User access" pane, click "Manage user access"
 4. Click "Users", click "Add groups and users"
 5. Search for and select the users you want to add, and click "Assign"
@@ -162,7 +162,7 @@ This is a security best practice that adds a layer of protection to your applica
 ### 3. Configure Advanced Indexing for Web Crawler
 
 1. Navigate to the Amazon Q Business console
-2. Select your application (`AWS_AI_Chatbot_Corrections`)
+2. Select your application (`CIC_AI_Chatbot_Corrections`)
 3. Go to the "Data sources" tab in the left pane
 4. Select the "WebCrawlerDataSource" data source from the "Data Sources" pane
 5. Click "Actions" -> "Edit"
@@ -176,7 +176,7 @@ This is a security best practice that adds a layer of protection to your applica
 The web crawler is configured for on-demand synchronization. To start the initial crawl:
 
 1. Navigate to the Amazon Q Business console
-2. Select your application (`AWS_AI_Chatbot_Corrections`)
+2. Select your application (`CIC_AI_Chatbot_Corrections`)
 3. Go to the "Data sources" tab
 4. Select the "WebCrawlerDataSource" data source
 5. Click "Sync now" to start the crawling process
