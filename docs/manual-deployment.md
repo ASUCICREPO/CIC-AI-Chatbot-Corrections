@@ -34,6 +34,8 @@ This is a security best practice that adds an additional layer of protection to 
 
 1. Log in to your AWS Management Console
 2. Navigate to the region where you want to deploy (e.g., us-west-2)
+![image](https://github.com/user-attachments/assets/3f28f9ad-9f69-47d6-999a-5488c2304f1b)
+
 
 ### Step 2: Navigate to Amazon Q Business
 
