@@ -129,7 +129,7 @@ This interactive script will:
 
 **Expected Deployment Time**: The deployment typically takes 8-12 minutes to complete.
 
-**Security Note**: During deployment, you may encounter security warnings from the Node Package Manager (NPM). These warnings relate to dependencies in the JavaScript libraries used for infrastructure provisioning in this demonstration environment. These dependencies are used solely for making API calls during the deployment process and do not interact with your production data or persist after deployment. While we regularly review and update dependencies, some warnings may appear due to the specific versions required for compatibility. These warnings do not compromise the security or confidentiality of your production environment, data, or infrastructure.
+**Security Note**: During deployment, you may encounter security warnings from the Node Package Manager (NPM). These warnings relate to dependencies in the JavaScript libraries used for infrastructure provisioning in this demonstration environment. These dependencies are used solely for communicating with AWS services during the deployment process to create your infrastructure resources and do not interact with your production data or persist after deployment. While we regularly review and update dependencies, some warnings may appear due to the specific versions required for compatibility. These warnings do not compromise the security or confidentiality of your production environment, data, or infrastructure.
 
 ## Post-Deployment Configuration (AWS Console)
 
